@@ -17,13 +17,14 @@ function App() {
             <Home />
           </Route>
 
+          <Route path="/lovecalc" exact>
+            <LoveCalculator />
+          </Route>
           <Route path="/lovequotes" exact>
             <LoveQuotes />
           </Route>
         </Container>
       </>
-
-      {/* https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-dE9zgDUQ9huPbfHaPk3Qre7J1UOBuq-VRuoNz4GLNGrhuivEu_ZS1RW9uUAAqkySXF7LE396ktMF/pubhtml */}
       <Footer />
     </Router>
   );
