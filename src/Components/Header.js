@@ -1,7 +1,6 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+import { Navbar, Nav, Container} from 'react-bootstrap'
 
 const Header = () => {
 
@@ -18,6 +17,11 @@ const Header = () => {
               <LinkContainer to='/lovecalc'>
                 <Nav.Link>
                   Love Percentage Calculator 
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/lovequotes'>
+                <Nav.Link>
+                  Love Quotes 
                 </Nav.Link>
               </LinkContainer>
             </Nav>

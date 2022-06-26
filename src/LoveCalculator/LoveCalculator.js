@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Form, Card, Button } from "react-bootstrap";
-
+import CustomFormGroup from "../Components/CustomFormGroup";
+import { textConstant } from "../Constants/textConstants";
 const LoveCalculator = () => {
   const [yourName, setYourName] = useState("");
   const [yourPartner, setYourPartner] = useState("");
@@ -10,7 +11,7 @@ const LoveCalculator = () => {
   useEffect(() => {
     if (percentage) {
       var i = 0;
-      if (i == 0) {
+      if (i === 0) {
         i = 1;
         var elem = document.getElementById("perc");
         var width = 1;
@@ -62,16 +63,15 @@ const LoveCalculator = () => {
   const calculate = () => {
     var sum = 0;
     var sum1 = 0;
-    for (var i = 0; i < yourName.length; i++) {
-      var n = yourName.charCodeAt(i);
+    for (let i = 0; i < yourName.length; i++) {
+      let n = yourName.charCodeAt(i);
       sum = sum + n;
     }
-    for (var i = 0; i < yourPartner.length; i++) {
-      var n = yourPartner.charCodeAt(i);
+    for (let i = 0; i < yourPartner.length; i++) {
+      let n = yourPartner.charCodeAt(i);
       sum1 = sum1 + n;
     }
     var total = sum + sum1;
-    console.log("yourName", yourName, yourPartner, total);
     setPercentage(Number(total) % 100);
   };
   const reset = () => {
@@ -83,34 +83,36 @@ const LoveCalculator = () => {
   return (
     <Row>
       <Col md="6" className="m-auto">
-        <Card className="p-2 mt-5">
+        <p className="mt-4">{textConstant.love_calculator_description}</p>
+        <Card className="p-2 mt-2">
           <Card.Title>
             <div className="text-center">❤️Love Calculator</div>
           </Card.Title>
           <Card.Body className="p-1">
             <Form autoComplete="off">
-              <Form.Group className="mb-3">
-                <Form.Label>YOUR NAME😍</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="your name"
-                  value={yourName}
-                  onChange={(e) => setYourName(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label>PARTNER'S NAME😍</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="partner's name"
-                  value={yourPartner}
-                  onChange={(e) => setYourPartner(e.target.value)}
-                />
-              </Form.Group>
+              <CustomFormGroup
+                label={"YOUR NAME😍"}
+                type="text"
+                placeholder="your name"
+                value={yourName}
+                setValue={setYourName}
+              />
+              <CustomFormGroup
+                label={"PARTNER'S NAME😍"}
+                type="text"
+                placeholder="partner's name"
+                value={yourPartner}
+                setValue={setYourPartner}
+              />
             </Form>
           </Card.Body>
           {percentage ? (
-            <div id="perc" className={`love-font text-center`} />
+            <>
+              <div id="perc" className={`love-font text-center`} />
+              <h2 className="text-center">
+                {yourName} ❤️ {yourPartner}
+              </h2>
+            </>
           ) : null}
           <div className="text-center blink_text text-warning fs-22">
             {message}
@@ -124,6 +126,12 @@ const LoveCalculator = () => {
             </Button>
           </div>
         </Card>
+        <small>
+          Note that like all other love calculators on the Internet, this
+          calculator is intended for amusement only rather than as a real
+          indication of love. Please follow your heart instead of the results of
+          this calculator when considering love.
+        </small>
       </Col>
     </Row>
   );
