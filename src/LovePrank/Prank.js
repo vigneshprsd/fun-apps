@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../Axios/axios"
 import React, { useEffect, useState } from "react";
 import { Row, Col, Form, Card, Button } from "react-bootstrap";
 import CustomFormGroup from "../Components/CustomFormGroup";

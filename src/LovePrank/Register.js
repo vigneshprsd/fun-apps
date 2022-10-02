@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import CustomFormGroup from "../Components/CustomFormGroup";
 import { textConstant } from "../Constants/textConstants";
 import { URLCONSTANTS } from "../Constants/urlConstant";
-import axios from "axios";
+import axios from "../Axios/axios"
 import { Context } from "../store";
 
 const Register = () => {

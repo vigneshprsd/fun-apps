@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Row, Col, Form, Card, Button } from "react-bootstrap";
 import CustomFormGroup from "../Components/CustomFormGroup";
@@ -6,6 +5,7 @@ import { textConstant } from "../Constants/textConstants";
 import { URLCONSTANTS } from "../Constants/urlConstant";
 import { Context } from "../store";
 import { useHistory } from "react-router-dom";
+import axios from "../Axios/axios"
 
 const Login = () => {
   let history = useHistory();
