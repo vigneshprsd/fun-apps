@@ -14,7 +14,7 @@ const LoveCalculator = () => {
       if (i === 0) {
         i = 1;
         var elem = document.getElementById("perc");
-        var width = 1;
+        var width = 0;
         var id = setInterval(frame, 50);
         function frame() {
           if (width >= Number(percentage)) {
