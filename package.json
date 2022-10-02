@@ -1,6 +1,6 @@
 {
   "name": "fun-apps",
-  "proxy": "https://funappsbyjingalala.herokuapp.com/",
+  "proxy": "https://funappsbyjingalala.herokuapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

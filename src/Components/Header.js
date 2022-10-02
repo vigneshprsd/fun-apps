@@ -27,8 +27,7 @@ const Header = () => {
                 <Nav.Link>Prank your friends</Nav.Link>
               </LinkContainer>
             </Nav>
-          </Navbar.Collapse>
-          <Nav>
+            <Nav>
             {userDetails ? (
               <div onClick={()=>{ window.location.reload(false);}}>
                 <Nav.Link>Logout</Nav.Link>
@@ -42,6 +41,8 @@ const Header = () => {
               </LinkContainer></>
             )}
           </Nav>
+          </Navbar.Collapse>
+          
         </Container>
       </Navbar>
     </header>
